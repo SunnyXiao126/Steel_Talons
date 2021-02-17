@@ -4,7 +4,7 @@ setup = function() {
 };
 // IMAGE VARIABLES
 {
-var battleSong; 
+//var battleSong; 
 var myFont;
 var tSW1Ship, tSW2Ship, t1Ship, t2Ship, t3Ship, t4Ship, t5Ship, t6Ship, t7Ship, t8Ship, t9Ship, t10Ship, t11Ship, t12Ship, tS1Ship, tS2Ship, tS3Ship, tS4Ship;
 var tSWShipAegis, t1ShipAegis, t2ShipAegis, t3ShipAegis, t4ShipAegis, t5ShipAegis, t6ShipAegis, t7ShipAegis, t8ShipAegis, t9ShipAegis, t10ShipAegis, t11ShipAegis, t12ShipAegis, tS1ShipAegis, tS2ShipAegis, tS3ShipAegis, tS4ShipAegis;
@@ -164,7 +164,7 @@ var preload = function() {
     coalition = loadFont("libraries/Graphics/Com Sci Graphics/Font/Coalition_v2..ttf");
     
     //Audio
-   battleSong = loadSound('libraries/Graphics/Com Sci Graphics/Audio/Ep.wav');
+   //battleSong = loadSound('libraries/Graphics/Com Sci Graphics/Audio/Ep.wav');
     
     // Explosion
     explosion1 = loadImage("libraries/Graphics/Com Sci Graphics/Animations/Explosion/explosion (1).png");
@@ -226,34 +226,36 @@ var menu = function() { // Draw it
     }
     
     // Highscore and unlocks goals
-    textSize(20);
-    textFont(myFont);
-    text("Highscore: " + highscore, 20, 450, 364);
-    text("Next unlock: ", 20, 500);
-    if (highscore < 500) {
-        text("Tier 2 Ships (Need Score of 500)", 130, 500, 210);
-    }
-    else if (highscore >= 500 && highscore < 2000) {
-        text("Tier 1 Ships Upgrades (Need Score of 2000)", 130, 500, 210);
-    }
-    else if (highscore >= 2000 && highscore < 5000) {
-        text("Tier 3 Ships and Tier 2 Ship Upgrades (Need Score of 5000)", 130, 500, 210);
-    }
-    else if (highscore >= 5000 && highscore < 8000) {
-        text("Tier 3 Ship Upgrades (Need Score of 8000)", 130, 500, 210);
-    }
-    else if (highscore >= 8000 && highscore < 10000) {
-        text("Tier 4 Ships (Need Score of 10000)", 130, 500, 210);
-    }
-    else if (highscore >= 10000 && highscore < 20000) {
-        text("Tier 5 Ships (Need Score of 20000)", 130, 500, 210);
-    }
-    
-    // Credits
     textSize(15);
     textFont(myFont);
-    text("Created by Harrison and Sunny", 20, 575, 300);
-
+    var xpos = 500;
+    var ypos = 520
+    var textsize = 20;
+    text("Highscore: " + highscore, textsize, ypos - 40, xpos);
+    text("Next unlock: ", textsize, ypos - 20, xpos);
+    if (highscore < 500) {
+        text("Tier 2 Ships (Need Score of 500)", textsize, ypos, xpos);
+    }
+    else if (highscore >= 500 && highscore < 2000) {
+        text("Tier 1 Ships Upgrades (Need Score of 2000)", textsize, ypos, xpos);
+    }
+    else if (highscore >= 2000 && highscore < 5000) {
+        text("Tier 3 Ships and Tier 2 Ship Upgrades (Need Score of 5000)", textsize, ypos, xpos);
+    }
+    else if (highscore >= 5000 && highscore < 8000) {
+        text("Tier 3 Ship Upgrades (Need Score of 8000)", textsize, ypos, xpos);
+    }
+    else if (highscore >= 8000 && highscore < 10000) {
+        text("Tier 4 Ships (Need Score of 10000)", textsize, ypos, xpos);
+    }
+    else if (highscore >= 10000 && highscore < 20000) {
+        text("Tier 5 Ships (Need Score of 20000)", textsize, ypos, xpos);
+    }
+    
+    // Credits + Controls
+    textSize(15);
+    textFont(myFont);
+    text("Created by Sunny and Harrison", textsize, ypos + 40, xpos);
     
 };
 
@@ -2648,9 +2650,9 @@ var spawnWaves = function() { //for loops count too fast
 
 // update and loop everything
 draw = function() {
-    if(battleSong.isPlaying() === false) {
-        battleSong.play();
-    } 
+    //if(battleSong.isPlaying() === false) {
+        //battleSong.play();
+    //} 
     
     // Hidden ship access
     if(systemLoginId === "Asuna") {
